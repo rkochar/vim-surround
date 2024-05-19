@@ -77,6 +77,12 @@ support:
 Only the opening brackets—`[`, `{`, and `(`—add a space.  Use a closing
 bracket, or the `b` (`(`) and `B` (`{`) aliases.
 
+Two new global variables have been added to toggle whether spaces are added
+to the opening and closing brackets, respectively
+
+    let g:surround_insert_space_left = 1        " left: opening brackets
+    let g:surround_insert_space_right = 0       " right: closing brackets
+
 ## Contributing
 
 See the contribution guidelines for
