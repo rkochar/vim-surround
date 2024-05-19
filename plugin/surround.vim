@@ -8,6 +8,9 @@ if exists("g:loaded_surround") || &cp || v:version < 700
 endif
 let g:loaded_surround = 1
 
+let g:insert_space_left = get(g:, 'surround_insert_space_left', 1)
+let g:insert_space_right = get(g:, 'surround_insert_space_right', 0)
+
 " Input functions {{{1
 
 function! s:getchar()
@@ -258,7 +261,14 @@ function! s:wrap(string,char,type,removed,special)
     let before = '('.fnc.' '
     let after = ')'
   elseif idx >= 0
-    let spc = (idx % 3) == 1 ? " " : ""
+    let pos = idx % 3
+    let spc = ""
+    if g:insert_space_left && pos == 1        " left brackets
+      let spc = " "
+    endif
+    if g:insert_space_right && pos == 2       " right brackets
+      let spc = " "
+    endif
     let idx = idx / 3 * 3
     let before = strpart(pairs,idx+1,1) . spc
     let after  = spc . strpart(pairs,idx+2,1)
