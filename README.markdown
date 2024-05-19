@@ -60,6 +60,10 @@ and removing pairs of tags simultaneously is a breeze.
 The `.` command will work with `ds`, `cs`, and `yss` if you install
 [repeat.vim](https://github.com/tpope/vim-repeat).
 
+## Custom surrounds
+[See PR](https://github.com/tpope/vim-surround/pull/355)
+# TODO: Add to doc
+
 ## Installation
 
 Install using your favorite package manager, or use Vim's built-in package
